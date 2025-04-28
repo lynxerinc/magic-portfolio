@@ -1,19 +1,19 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Gaylor",
+  lastName: "Loche",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Développeur - Entrepreneur",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Europe/Paris", // IANA timezone
+  languages: ["Français"], // langue unique
 };
 
 const newsletter = {
-  display: true,
+  display: false, // désactiver la newsletter
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -23,18 +23,19 @@ const newsletter = {
   ),
 };
 
+
 const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/lynxerinc",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/max-lot-319896230/",
   },
   {
     name: "X",
@@ -44,27 +45,27 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:lochegaylor@icloud.com",
   },
 ];
 
 const home = {
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  label: "Accueil",
+  title: `Portfolio de ${person.name}`,
+  description: `Fondateur et gérant d'une entreprise de formation, d'octroi de crédit et de vente de montres de luxe. Diplômé en développement et ingénierie informatique, titulaire d'un BTS en sciences économiques et politiques. Passionné par l'innovation, je remets en question les fondamentaux et aide à trouver de nouvelles solutions.`,
+  headline: <>Développeur - Entrepreneur</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Fondateur et dirigeant d'entreprises dans la formation, le crédit et la revente de montres de luxe. Diplômé en développement et ingénierie informatique et titulaire d'un BTS en sciences économiques et politiques, je repense les fondamentaux pour concevoir des solutions innovantes.
     </>
   ),
 };
 
+
 const about = {
-  label: "About",
-  title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "À propos",
+  title: "À propos de moi",
+  description: `Découvrez ${person.name}, ${person.role} basé en ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -73,119 +74,123 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Je suis Gaylor Loche, passionné par la création de solutions innovantes. Fort d'une double formation en développement informatique et en sciences économiques et politiques, j'ai fondé plusieurs entreprises dans des secteurs variés, alliant technologie, finance et commerce de luxe.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
+    display: true,
+    title: "Expériences professionnelles",
+    experiences: [      
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "WatchX",
+        timeframe: "2025 - Présent",
+        role: "Fondateur et Gérant",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          <>Développement d'une activité d'achat-revente de montres de luxe avec stratégie multicanal.</>,
+          <>Optimisation logistique et positionnement haut de gamme.</>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Formacash",
+        timeframe: "2024 - Présent",
+        role: "Fondateur et Gérant",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <>Vente de formations en développement informatique avec accompagnement personnalisé.</>,
+          <>Coordination des équipes, définition du business model et gestion financière de l'entreprise.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Quickfund",
+        timeframe: "2024 - Présent",
+        role: "Fondateur et Gérant",
+        achievements: [
+          <>Création d'une société d'octroi de crédits adaptée aux besoins individuels des clients.</>,
+          <>Gestion complète des dossiers clients, trésorerie et placements financiers.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "La Casa de Las Carcasas",
+        timeframe: "2024/11 - 2025/03",
+        role: "Conseiller de vente",
+        achievements: [
+          <>Accueil personnalisé et accompagnement dynamique du client tout au long du processus de vente.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "McDonald's",
+        timeframe: "2023/02 - 2024/07",
+        role: "Responsable point de vente",
+        achievements: [
+          <>Supervision des équipiers et respect strict des normes d'hygiène et des procédures de service.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "BPCE",
+        timeframe: "2022/07 - 2023/01",
+        role: "Pentester junior",
+        achievements: [
+          <>Réalisation de tests d'intrusion et analyse des vulnérabilités pour la Caisse d'Épargne.</>,
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Formations",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "DUT - Développement et Ingénierie Informatique",
+        description: <>Compétences en développement logiciel, sécurité informatique et architecture système.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "BTS Sciences Économiques et Politiques",
+        description: <>Analyse économique, droit, sciences politiques et gestion.</>,
+      },
+      {
+        name: "DEUST Informatique",
+        description: <>Formation en informatique générale suivie à Paris et en distanciel.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Compétences techniques",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Développement web",
+        description: <>Création d'applications avec Next.js, TailwindCSS et Supabase.</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Blockchain & Crypto",
+        description: <>Mise en œuvre de solutions basées sur Ethereum, Geth, et Smart Contracts.</>,
+        images: [],
+      },
+      {
+        title: "No-code & Automatisation",
+        description: <>Développement de workflows automatisés avec Bubble, Zapier et Webflow.</>,
+        images: [],
       },
     ],
   },
 };
+
+
 
 const blog = {
   label: "Blog",
@@ -196,8 +201,8 @@ const blog = {
 };
 
 const work = {
-  label: "Work",
-  title: "My projects",
+  label: "Projets",
+  title: "Mes projets",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes

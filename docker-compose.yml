@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  magic-portfolio:
+    container_name: magic-portfolio
+    build: .
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    driver: bridge
