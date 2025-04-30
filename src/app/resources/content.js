@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Développeur - Entrepreneur",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.png",
   location: "Europe/Paris", // IANA timezone
   languages: ["Français"], // langue unique
 };
@@ -82,7 +82,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Je suis Gaylor Loche, passionné par la création de solutions innovantes. Fort d'une double formation en développement informatique et en sciences économiques et politiques, j'ai fondé plusieurs entreprises dans des secteurs variés, alliant technologie, finance et commerce de luxe.
+        Passionné par la création de solutions innovantes. Fort d'une double formation en développement informatique et en sciences économiques et politiques, j'ai fondé plusieurs entreprises dans des secteurs variés, alliant technologie, finance et commerce de luxe.
       </>
     ),
   },

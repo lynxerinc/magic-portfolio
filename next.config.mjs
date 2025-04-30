@@ -1,8 +1,11 @@
 import mdx from "@next/mdx";
+import rehypeRaw from "rehype-raw";
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
-  options: {},
+  options: {
+    rehypePlugins: [rehypeRaw],
+  },
 });
 
 /** @type {import('next').NextConfig} */
