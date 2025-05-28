@@ -122,7 +122,7 @@ const about = {
       },
       {
         company: "La Casa de Las Carcasas",
-        timeframe: "2024/11 - 2025/03",
+        timeframe: "2024/03 - 2025/03",
         role: "Conseiller de vente",
         achievements: [
           <>Accueil personnalisé et accompagnement dynamique du client tout au long du processus de vente.</>,
