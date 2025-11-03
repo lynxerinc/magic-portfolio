@@ -287,4 +287,71 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const services = {
+  label: "Services",
+  title: "Services de développement",
+  description: `Services professionnels de développement proposés par ${person.name}`,
+  headline: "Transformez vos idées en solutions digitales",
+  subline: "Expert en développement web, blockchain et automatisation. Je vous accompagne de la conception à la mise en production.",
+  categories: [
+    {
+      title: "Développement Web & Mobile",
+      icon: "code",
+      description: "Création d'applications web et mobiles modernes et performantes",
+      services: [
+        "Sites web et applications Next.js / React",
+        "Applications mobiles responsive",
+        "Progressive Web Apps (PWA)",
+        "Interfaces utilisateur sur mesure",
+        "Optimisation des performances et SEO",
+        "Intégration de bases de données (Supabase, PostgreSQL)",
+      ],
+    },
+    {
+      title: "Blockchain & Crypto",
+      icon: "bitcoin",
+      description: "Solutions blockchain et smart contracts sécurisées",
+      services: [
+        "Développement de Smart Contracts (Solidity)",
+        "Déploiement sur Ethereum et autres réseaux",
+        "Audit de sécurité de contrats intelligents",
+        "Intégration Web3 dans vos applications",
+        "Solutions DeFi personnalisées",
+        "Configuration de nœuds blockchain (Geth)",
+      ],
+    },
+    {
+      title: "Automatisation & No-Code",
+      icon: "automation",
+      description: "Gagnez du temps avec des workflows automatisés",
+      services: [
+        "Automatisation de processus métier",
+        "Intégrations API et webhooks",
+        "Solutions Bubble.io et Webflow",
+        "Workflows Zapier et Make",
+        "Synchronisation de données entre outils",
+        "Création de dashboards personnalisés",
+      ],
+    },
+    {
+      title: "Conseil & Audit",
+      icon: "search",
+      description: "Expertise technique pour vos projets digitaux",
+      services: [
+        "Audit de code et architecture",
+        "Tests d'intrusion et pentesting",
+        "Analyse de vulnérabilités",
+        "Conseil en choix technologiques",
+        "Revue de performance et optimisation",
+        "Formation d'équipes techniques",
+      ],
+    },
+  ],
+  cta: {
+    title: "Prêt à démarrer votre projet ?",
+    description: "Discutons de vos besoins et établissons ensemble un devis personnalisé.",
+    buttonText: "Me contacter",
+  },
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, services };
