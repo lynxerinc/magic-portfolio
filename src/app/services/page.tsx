@@ -73,14 +73,15 @@ export default function Services() {
         <Heading variant="display-strong-xl" align="center">
           {services.headline}
         </Heading>
-        <Text
-          variant="display-default-xs"
-          onBackground="neutral-weak"
-          align="center"
-          maxWidth="32"
-        >
-          {services.subline}
-        </Text>
+        <Column maxWidth="32" horizontal="center">
+          <Text
+            variant="display-default-xs"
+            onBackground="neutral-weak"
+            align="center"
+          >
+            {services.subline}
+          </Text>
+        </Column>
       </Flex>
 
       <Column fillWidth gap="xl" marginBottom="40">
@@ -163,14 +164,15 @@ export default function Services() {
         <Heading as="h2" variant="heading-strong-xl" align="center">
           {services.cta.title}
         </Heading>
-        <Text
-          variant="body-default-l"
-          onBackground="neutral-weak"
-          align="center"
-          maxWidth="24"
-        >
-          {services.cta.description}
-        </Text>
+        <Column maxWidth="24" horizontal="center">
+          <Text
+            variant="body-default-l"
+            onBackground="neutral-weak"
+            align="center"
+          >
+            {services.cta.description}
+          </Text>
+        </Column>
         <Button
           href={contactEmail}
           size="l"
