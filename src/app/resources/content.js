@@ -191,6 +191,91 @@ const about = {
 };
 
 
+const services = {
+  label: "Services",
+  title: "Services digitaux sur mesure",
+  description: "Des solutions techniques et stratégiques pour accélérer vos projets numériques.",
+  hero: {
+    eyebrow: "Accompagnement premium",
+    title: "Accélérez vos projets digitaux",
+    description:
+      "Je vous aide à concevoir, développer et déployer des produits numériques performants, parfaitement alignés avec vos objectifs d'entrepreneur ou de PME.",
+    cta: {
+      label: "Demander un devis",
+      href: "mailto:lochegaylor@icloud.com",
+    },
+  },
+  note:
+    "Chaque mission est facturée sur devis en fonction de la complexité, des délais et du niveau d'accompagnement souhaité.",
+  categoriesTitle: "Expertises proposées",
+  categories: [
+    {
+      title: "Développement sur mesure",
+      description: "Des applications modernes bâties avec les meilleurs outils du web.",
+      items: [
+        "Applications web Next.js, React et Node.js prêtes pour la production",
+        "Intégration d'APIs tierces et automatisation des échanges de données",
+        "Sites vitrines optimisés pour le SEO et l'expérience utilisateur",
+      ],
+    },
+    {
+      title: "Automatisation & No-code",
+      description: "Optimisez vos opérations avec des workflows intelligents.",
+      items: [
+        "Automatisation de processus avec Zapier, Make ou n8n",
+        "Création d'outils métiers avec Bubble, Airtable ou Supabase",
+        "Mise en place de tableaux de bord pour suivre vos indicateurs clés",
+      ],
+    },
+    {
+      title: "Conseil & Stratégie digitale",
+      description: "Un accompagnement global pour structurer votre vision produit.",
+      items: [
+        "Ateliers de cadrage pour définir objectifs, périmètre et feuille de route",
+        "Audit technique et recommandations d'architecture",
+        "Pilotage produit, suivi de la qualité et amélioration continue",
+      ],
+    },
+    {
+      title: "Formation & accompagnement",
+      description: "Transmettez les bonnes pratiques et gagnez en autonomie.",
+      items: [
+        "Coaching technique pour développeurs et profils non-tech",
+        "Sessions de formation sur Next.js, Supabase et les outils no-code",
+        "Support continu pour la prise en main de vos nouveaux outils",
+      ],
+    },
+  ],
+  process: {
+    title: "Une méthode collaborative",
+    steps: [
+      {
+        title: "Diagnostic & priorisation",
+        description:
+          "Analyse de vos objectifs, de vos contraintes et de l'existant pour bâtir une vision claire du projet.",
+      },
+      {
+        title: "Conception & prototypage",
+        description:
+          "Co-création des parcours, sélection des technologies et validation rapide via prototypes fonctionnels.",
+      },
+      {
+        title: "Développement & mise en ligne",
+        description:
+          "Itérations courtes, recettes partagées et déploiement sécurisé avec un accompagnement jusqu'à la prise en main.",
+      },
+    ],
+  },
+  contact: {
+    title: "Discutons de votre projet",
+    description: "Présentez-moi vos besoins et recevez une proposition personnalisée sous 48 heures.",
+    action: {
+      label: "Planifier un appel",
+      href: "mailto:lochegaylor@icloud.com",
+    },
+  },
+};
+
 
 const blog = {
   label: "Blog",
@@ -287,4 +372,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, services, blog, work, gallery };

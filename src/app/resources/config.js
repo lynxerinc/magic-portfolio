@@ -3,6 +3,7 @@ const baseURL = "demo.magic-portfolio.com";
 const routes = {
   "/": true,
   "/about": true,
+  "/services": true,
   "/work": true,
   "/blog": false,
   "/gallery": false,
