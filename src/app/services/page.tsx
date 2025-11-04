@@ -3,6 +3,7 @@ import {
   Card,
   Column,
   Flex,
+  Grid,
   Heading,
   Icon,
   Tag,
@@ -79,8 +80,10 @@ export default function ServicesPage() {
       />
       <Column fillWidth paddingX="l" paddingY="xl" gap="m">
         <Tag variant="brand" size="s" label={services.hero.eyebrow} />
-        <Heading variant="display-strong-l">{services.hero.title}</Heading>
-        <Text variant="heading-default-l" onBackground="neutral-weak">
+        <Heading wrap="balance" variant="display-strong-l">
+          {services.hero.title}
+        </Heading>
+        <Text wrap="balance" variant="heading-default-l" onBackground="neutral-weak">
           {services.hero.description}
         </Text>
         <Flex
@@ -90,6 +93,7 @@ export default function ServicesPage() {
           padding="16"
           gap="8"
           vertical="center"
+          mobileDirection="column"
         >
           <Icon name="infoCircle" size="m" onBackground="brand-strong" />
           <Text variant="body-default-m" onBackground="brand-strong">
@@ -113,15 +117,14 @@ export default function ServicesPage() {
         <Heading as="h2" variant="display-strong-s">
           {services.categoriesTitle}
         </Heading>
-        <Flex wrap gap="20">
+        <Grid columns="3" tabletColumns="2" mobileColumns="1" gap="m" fillWidth>
           {services.categories.map((category) => (
             <Card
               key={category.title}
               direction="column"
               gap="m"
               padding="24"
-              flex="1"
-              minWidth="64"
+              fill
             >
               <Heading as="h3" variant="heading-strong-m">
                 {category.title}
@@ -141,21 +144,20 @@ export default function ServicesPage() {
               </Column>
             </Card>
           ))}
-        </Flex>
+        </Grid>
       </Column>
       <Column fillWidth paddingX="l" gap="l">
         <Heading as="h2" variant="display-strong-s">
           {services.process.title}
         </Heading>
-        <Flex wrap gap="20">
+        <Grid columns="3" tabletColumns="2" mobileColumns="1" gap="m" fillWidth>
           {services.process.steps.map((step, index) => (
             <Card
               key={step.title}
               direction="column"
               gap="m"
               padding="24"
-              flex="1"
-              minWidth="56"
+              fill
             >
               <Tag variant="brand" size="s" label={`Étape ${index + 1}`} />
               <Heading as="h3" variant="heading-strong-s">
@@ -166,7 +168,7 @@ export default function ServicesPage() {
               </Text>
             </Card>
           ))}
-        </Flex>
+        </Grid>
       </Column>
       <Column fillWidth paddingX="l" paddingBottom="xl">
         <Column
