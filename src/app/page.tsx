@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Card, Icon, Grid, Tag } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
+import { home, about, person, newsletter, services } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 
@@ -100,6 +100,63 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
+
+      {/* Section Services */}
+      <Column fillWidth gap="l" paddingTop="xl">
+        <Flex fillWidth gap="24" mobileDirection="column" paddingX="l">
+          <Flex flex={1}>
+            <Column gap="m">
+              <Tag variant="brand" size="s" label={services.hero.eyebrow} />
+              <Heading as="h2" variant="display-strong-s" wrap="balance">
+                {services.categoriesTitle}
+              </Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                {services.description}
+              </Text>
+              <Button
+                id="services-cta"
+                href="/services"
+                variant="primary"
+                size="m"
+                arrowIcon
+              >
+                Découvrir tous les services
+              </Button>
+            </Column>
+          </Flex>
+          <Flex flex={2}>
+            <Grid columns="2" mobileColumns="1" gap="m" fillWidth>
+              {services.categories.slice(0, 4).map((category) => (
+                <Card
+                  key={category.title}
+                  direction="column"
+                  gap="m"
+                  padding="20"
+                  fill
+                >
+                  <Heading as="h3" variant="heading-strong-s">
+                    {category.title}
+                  </Heading>
+                  <Text variant="body-default-s" onBackground="neutral-weak">
+                    {category.description}
+                  </Text>
+                  <Column as="ul" gap="4" paddingLeft="0">
+                    {category.items.slice(0, 2).map((item) => (
+                      <Flex key={item} as="li" gap="8" vertical="center">
+                        <Icon name="check" size="xs" onBackground="brand-strong" />
+                        <Text as="span" variant="body-default-xs" onBackground="neutral-weak">
+                          {item}
+                        </Text>
+                      </Flex>
+                    ))}
+                  </Column>
+                </Card>
+              ))}
+            </Grid>
+          </Flex>
+        </Flex>
+      </Column>
+
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
