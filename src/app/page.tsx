@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Card, Icon, Grid, Tag } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
+import { home, about, person, newsletter, services, social } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 
@@ -113,6 +113,67 @@ export default function Home() {
         </Flex>
       )}
       <Projects range={[2]} />
+      <Column fillWidth gap="l" paddingTop="l">
+        <Flex fillWidth paddingX="l" paddingTop="xl" paddingBottom="m" direction="column" gap="m">
+          <Tag variant="brand" size="s" label="Services" />
+          <Heading as="h2" variant="display-strong-l" wrap="balance">
+            Solutions digitales sur mesure
+          </Heading>
+          <Text variant="heading-default-l" onBackground="neutral-weak">
+            {person.name} vous accompagne dans tous vos projets numériques
+          </Text>
+          <Flex gap="12" wrap="true" vertical="center">
+            <Button
+              id="contact-services"
+              href={`mailto:${social.find(s => s.name === "Email")?.link.replace("mailto:", "")}`}
+              prefixIcon="email"
+              variant="primary"
+              size="m"
+            >
+              {social.find(s => s.name === "Email")?.link.replace("mailto:", "")}
+            </Button>
+          </Flex>
+        </Flex>
+        <Grid columns="2" mobileColumns="1" gap="m" fillWidth paddingX="l">
+          {services.categories.map((category) => (
+            <Card
+              key={category.title}
+              direction="column"
+              gap="m"
+              padding="24"
+              fill
+            >
+              <Heading as="h3" variant="heading-strong-m">
+                {category.title}
+              </Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                {category.description}
+              </Text>
+              <Column as="ul" gap="8" paddingLeft="0">
+                {category.items.slice(0, 2).map((item) => (
+                  <Flex key={item} as="li" gap="8" vertical="center">
+                    <Icon name="check" size="s" onBackground="brand-strong" />
+                    <Text as="span" variant="body-default-s" onBackground="neutral-weak">
+                      {item}
+                    </Text>
+                  </Flex>
+                ))}
+              </Column>
+            </Card>
+          ))}
+        </Grid>
+        <Flex fillWidth paddingX="l" horizontal="center" paddingTop="m">
+          <Button
+            id="services-page"
+            href="/services"
+            variant="secondary"
+            size="m"
+            arrowIcon
+          >
+            Découvrir tous les services
+          </Button>
+        </Flex>
+      </Column>
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
