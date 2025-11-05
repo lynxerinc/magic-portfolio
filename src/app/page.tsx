@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Grid, Card, Icon, Tag } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
+import { home, about, person, newsletter, services } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 
@@ -100,6 +100,70 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
+      <Column fillWidth gap="l" paddingTop="xl">
+        <Flex fillWidth gap="24" mobileDirection="column">
+          <Flex flex={1} paddingLeft="l">
+            <Heading as="h2" variant="display-strong-xs" wrap="balance">
+              {services.categoriesTitle}
+            </Heading>
+          </Flex>
+          <Flex flex={3} paddingX="20" direction="column" gap="m">
+            <Text variant="body-default-l" onBackground="neutral-weak">
+              Des solutions techniques et stratégiques pour accélérer vos projets numériques.
+            </Text>
+            <Flex gap="12" vertical="center" wrap>
+              <Icon name="person" size="m" onBackground="brand-strong" />
+              <Text variant="body-default-m" onBackground="brand-strong">
+                {person.name}
+              </Text>
+              <Text variant="body-default-m" onBackground="neutral-weak">•</Text>
+              <Icon name="email" size="m" onBackground="brand-strong" />
+              <Text variant="body-default-m" onBackground="brand-strong">
+                lochegaylor@icloud.com
+              </Text>
+            </Flex>
+          </Flex>
+        </Flex>
+        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="m" fillWidth paddingX="l">
+          {services.categories.slice(0, 4).map((category) => (
+            <Card
+              key={category.title}
+              direction="column"
+              gap="m"
+              padding="24"
+              fill
+            >
+              <Heading as="h3" variant="heading-strong-m">
+                {category.title}
+              </Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                {category.description}
+              </Text>
+              <Column as="ul" gap="8" paddingLeft="0">
+                {category.items.map((item) => (
+                  <Flex key={item} as="li" gap="8" vertical="center">
+                    <Icon name="check" size="s" onBackground="brand-strong" />
+                    <Text as="span" variant="body-default-s" onBackground="neutral-weak">
+                      {item}
+                    </Text>
+                  </Flex>
+                ))}
+              </Column>
+            </Card>
+          ))}
+        </Grid>
+        <Flex fillWidth horizontal="center" paddingX="l">
+          <Button
+            id="view-all-services"
+            href="/services"
+            variant="secondary"
+            size="m"
+            arrowIcon
+          >
+            Voir tous les services
+          </Button>
+        </Flex>
+      </Column>
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
