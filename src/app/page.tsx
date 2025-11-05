@@ -207,9 +207,11 @@ export default function Home() {
           <Heading as="h3" variant="heading-strong-l" align="center">
             💼 Prêt à démarrer votre projet ?
           </Heading>
-          <Text variant="body-default-l" onBackground="neutral-weak" align="center" maxWidth="m">
-            Contactez-moi dès maintenant pour discuter de vos besoins. Je vous propose un devis personnalisé et adapté à votre budget.
-          </Text>
+          <Column maxWidth="m">
+            <Text variant="body-default-l" onBackground="neutral-weak" align="center">
+              Contactez-moi dès maintenant pour discuter de vos besoins. Je vous propose un devis personnalisé et adapté à votre budget.
+            </Text>
+          </Column>
           <Button
             id="contact-cta"
             href="mailto:lochegaylor@icloud.com?subject=Nouveau projet"
