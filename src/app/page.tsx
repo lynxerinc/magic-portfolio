@@ -97,73 +97,134 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      <Column fillWidth gap="xl" paddingTop="xl" paddingBottom="xl">
+        <Column
+          fillWidth
+          background="brand-alpha-weak"
+          border="brand-alpha-medium"
+          radius="l"
+          padding="32"
+          gap="l"
+        >
+          <Column gap="m" maxWidth="l">
+            <Tag variant="brand" size="l" label="Services disponibles" />
+            <Heading as="h2" variant="display-strong-l" wrap="balance">
+              Besoin d'un développeur pour votre projet ?
+            </Heading>
+            <Text variant="heading-default-l" onBackground="brand-strong">
+              Je développe des solutions web sur mesure, automatise vos processus et vous accompagne dans votre transformation digitale. Disponible dès maintenant pour vos projets.
+            </Text>
+          </Column>
+          <Flex gap="16" vertical="center" wrap mobileDirection="column" fillWidth>
+            <Flex gap="12" vertical="center" wrap>
+              <Icon name="person" size="l" onBackground="brand-strong" />
+              <Column gap="4">
+                <Text variant="heading-strong-m" onBackground="brand-strong">
+                  {person.name}
+                </Text>
+                <Text variant="body-default-m" onBackground="brand-medium">
+                  Développeur Full-Stack & Entrepreneur
+                </Text>
+              </Column>
+            </Flex>
+            <Flex gap="12" vertical="center" wrap>
+              <Icon name="email" size="l" onBackground="brand-strong" />
+              <Column gap="4">
+                <Text variant="heading-strong-m" onBackground="brand-strong">
+                  lochegaylor@icloud.com
+                </Text>
+                <Text variant="body-default-m" onBackground="brand-medium">
+                  Réponse sous 24h - Devis gratuit
+                </Text>
+              </Column>
+            </Flex>
+          </Flex>
+          <Flex gap="12" wrap>
+            <Button
+              id="request-quote"
+              href="mailto:lochegaylor@icloud.com?subject=Demande de devis"
+              prefixIcon="email"
+              variant="primary"
+              size="l"
+              arrowIcon
+            >
+              Demander un devis gratuit
+            </Button>
+            <Button
+              id="view-services-detail"
+              href="/services"
+              variant="secondary"
+              size="l"
+              arrowIcon
+            >
+              Découvrir tous les services
+            </Button>
+          </Flex>
+        </Column>
+        <Column gap="l" fillWidth>
+          <Heading as="h3" variant="display-strong-s" paddingX="l">
+            🎯 Services proposés
+          </Heading>
+          <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="m" fillWidth paddingX="l">
+            {services.categories.slice(0, 4).map((category) => (
+              <Card
+                key={category.title}
+                direction="column"
+                gap="m"
+                padding="24"
+                fill
+                border="brand-alpha-medium"
+              >
+                <Heading as="h4" variant="heading-strong-l">
+                  {category.title}
+                </Heading>
+                <Text variant="body-default-l" onBackground="neutral-weak">
+                  {category.description}
+                </Text>
+                <Column as="ul" gap="12" paddingLeft="0">
+                  {category.items.map((item) => (
+                    <Flex key={item} as="li" gap="12" vertical="start">
+                      <Icon name="check" size="m" onBackground="brand-strong" />
+                      <Text as="span" variant="body-default-m" onBackground="neutral-medium">
+                        {item}
+                      </Text>
+                    </Flex>
+                  ))}
+                </Column>
+              </Card>
+            ))}
+          </Grid>
+        </Column>
+        <Column
+          fillWidth
+          background="surface"
+          border="neutral-medium"
+          radius="l"
+          padding="24"
+          gap="m"
+          horizontal="center"
+        >
+          <Heading as="h3" variant="heading-strong-l" align="center">
+            💼 Prêt à démarrer votre projet ?
+          </Heading>
+          <Text variant="body-default-l" onBackground="neutral-weak" align="center" maxWidth="m">
+            Contactez-moi dès maintenant pour discuter de vos besoins. Je vous propose un devis personnalisé et adapté à votre budget.
+          </Text>
+          <Button
+            id="contact-cta"
+            href="mailto:lochegaylor@icloud.com?subject=Nouveau projet"
+            prefixIcon="calendar"
+            variant="primary"
+            size="l"
+            arrowIcon
+          >
+            Réserver un appel découverte
+          </Button>
+        </Column>
+      </Column>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      <Column fillWidth gap="l" paddingTop="xl">
-        <Flex fillWidth gap="24" mobileDirection="column">
-          <Flex flex={1} paddingLeft="l">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              {services.categoriesTitle}
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20" direction="column" gap="m">
-            <Text variant="body-default-l" onBackground="neutral-weak">
-              Des solutions techniques et stratégiques pour accélérer vos projets numériques.
-            </Text>
-            <Flex gap="12" vertical="center" wrap>
-              <Icon name="person" size="m" onBackground="brand-strong" />
-              <Text variant="body-default-m" onBackground="brand-strong">
-                {person.name}
-              </Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">•</Text>
-              <Icon name="email" size="m" onBackground="brand-strong" />
-              <Text variant="body-default-m" onBackground="brand-strong">
-                lochegaylor@icloud.com
-              </Text>
-            </Flex>
-          </Flex>
-        </Flex>
-        <Grid columns="2" tabletColumns="1" mobileColumns="1" gap="m" fillWidth paddingX="l">
-          {services.categories.slice(0, 4).map((category) => (
-            <Card
-              key={category.title}
-              direction="column"
-              gap="m"
-              padding="24"
-              fill
-            >
-              <Heading as="h3" variant="heading-strong-m">
-                {category.title}
-              </Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {category.description}
-              </Text>
-              <Column as="ul" gap="8" paddingLeft="0">
-                {category.items.map((item) => (
-                  <Flex key={item} as="li" gap="8" vertical="center">
-                    <Icon name="check" size="s" onBackground="brand-strong" />
-                    <Text as="span" variant="body-default-s" onBackground="neutral-weak">
-                      {item}
-                    </Text>
-                  </Flex>
-                ))}
-              </Column>
-            </Card>
-          ))}
-        </Grid>
-        <Flex fillWidth horizontal="center" paddingX="l">
-          <Button
-            id="view-all-services"
-            href="/services"
-            variant="secondary"
-            size="m"
-            arrowIcon
-          >
-            Voir tous les services
-          </Button>
-        </Flex>
-      </Column>
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
